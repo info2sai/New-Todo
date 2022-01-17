@@ -26,15 +26,15 @@ function IdeyLabs() {
        
         SetStore([...store, newData])
     }
-
+         
     return (
         <div >
         <div className="container mt-5">
         <div className="row">
             <div className="col md-5">
                 <div className="card md-8">
-                    <div className="card-header bg-info ">
-                       <h5>To Do List</h5>
+                    <div className="card-header bg-secondary ">
+                       <h5>Please Enter Deatils</h5>
 
                     </div>
                     <div className="card-body">
@@ -42,21 +42,27 @@ function IdeyLabs() {
                        <form  className="form-inline" className="success"  onSubmit={handleSubmit} >
                       
                         <div className='form-group'>
-                        <input type="text" placeholder='First Name'onChange={handler} name='first'/>
+                        <input type="text" placeholder='First Name'    onChange={handler}  required="text" maxlength="10" minlength="3" name='first'/> <br/>
+                        <small className='text-primary'>Name is required</small>
                         </div>
                         <div className='form-group'>
-                          <input type="text" placeholder='Last Name' onChange={handler}  name='Last' /> 
+                          <input type="text" placeholder='Last Name' onChange={handler}  required="text"  maxlength="10" minlength="3"  name='Last' /> 
                         </div>
                         <div className='form-group'>
-                        <input type="Email" placeholder='Please Enter Valid Email' className='form-control'onChange={handler}  name='Email'/>
-                        </div>
+                        <input type="Email" placeholder='Please Enter Valid Email'  required="text"   className='form-control'onChange={handler}  name='Email'/>
+                        <small className='text-primary'>Please Enter vaild Email</small> </div>
                          <div className='form-group'>
-                        <input type="password" placeholder='Please Enter Password'  required="text" className='form-control'onChange={handler}  name='Password' /></div>
-                        <div className='form-group'>
-                        <input type="text"  placeholder='Phone-Number'  maxlength="10" size="10"onChange={handler}  name='Phone' />
+                        <input type="password" placeholder='Please Enter Password'  required="text" className='form-control'onChange={handler} maxlength="10" minlength="3" name='Password' />
+                        <small className='text-primary'>Password Is Required</small>
                         </div>
                         <div className='form-group'>
-                        <input type="date" onChange={handler}  required="" name='date' />
+                        <input type="text"  placeholder='Phone-Number'  maxlength="10" required="number" onChange={handler}  name='Phone' /> <br/>
+                        <small className='text-primary'>Password Is Required</small>
+                        <br/>
+                       
+                        </div>
+                        <div className='form-group'>
+                        <input type="date" onChange={handler}  required="date" name='date' />
                         </div>
                         <div className='form-group'>
                         <button className='btn btn-success '>Submit</button>
@@ -79,7 +85,7 @@ function IdeyLabs() {
     <div className="card">
     <div className="card-header ">
     <div className="card-body">
-    <table className='table table-hover   bg-success' >
+    <table className='table table-hover   bg-secondary' >
                        <thead>
                        <tr>
                        <th>ID</th>
