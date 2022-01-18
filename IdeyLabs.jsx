@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import React from 'react';
-import "../index.css"
+
 
 function IdeyLabs() {
     const [data,SetData]=useState({
@@ -40,11 +40,11 @@ function IdeyLabs() {
                     </div>
                     <div className="card-body">
                     
-                       <form  className="form-inline" className="success"  onSubmit={handleSubmit} >
-                      
+                       <form    onSubmit={handleSubmit} >
+                     
                         <div className='form-group'>
-                        <input type="text" placeholder='First Name'    onChange={handler}  required="text" maxlength="10" minlength="3" name='first'/> <br/>
-                        <small className='text-success'>Name is required</small>
+                        <input type="text" placeholder='First Name'  pattern='[a-zA-Z]*'   onChange={handler}  required="text" maxlength="10" minlength="3" name='first'/> <br/>
+                        <small className='text-success'>Name  Should Be Alphabets</small>
                         </div>
                         <div className='form-group'>
                           <input type="text" placeholder='Last Name' onChange={handler}  required="text"  maxlength="10" minlength="3"  name='Last' /> 
@@ -57,8 +57,8 @@ function IdeyLabs() {
                         <small className='text-success'>Password Is Required</small>
                         </div>
                         <div className='form-group'>
-                        <input type="text"  placeholder='Phone-Number'  maxlength="10" required="number" onChange={handler}  name='Phone' /> <br/>
-                        <small className='text-success'>Password Is Required</small> </div>
+                        <input type="text"  placeholder='Phone-Number' pattern="[0-9]*"  maxlength="10" onChange={handler}  name='Phone' /> <br/>
+                        <small className='text-success'>Phone number</small> </div>
                         <br/>
                         <div className='form-group'>
                         <input type="file"  onChange={handler} onChange={handler} required="file" name='file' /> <br/>
@@ -103,7 +103,7 @@ function IdeyLabs() {
                        
                        </tr>
                        </thead>
-                       <tbody className=' bg-info' >
+                       <tbody className=' bg-secondary' >
                        {store.map((emp, id)=>{
                            return(
                            <tr key={id}>
