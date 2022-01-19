@@ -4,8 +4,10 @@ console.log(b)
 
 for(i=1;i<=a.length-1;i++){
     for(j=0;j<i;j++){
-        if( var x=){
-
+        if( var x=a[i]){
+            a[i]=a[j];
+            a[j]=x
         }
     }
 }
+console.log(a)
